@@ -14,21 +14,21 @@ def add_song(itunes_identifier):
     data = construct_request_body(int(time.time()), itunes_identifier)
 
     headers = {
-        "X-Apple-Store-Front" : "143460,32",
         "Client-iTunes-Sharing-Version" : "3.13",
         "Accept-Language" : "en-DE;q=1.0, de-DE;q=0.9",
         "Client-Cloud-DAAP-Version" : "1.3/iTunes-12.6.2.20",
         "Accept-Encoding" : "gzip",
         "X-Apple-itre" : "0",
-        "Content-Length" : "77",
         "Client-DAAP-Version" : "3.13",
-        "User-Agent" : "iTunes/12.6.2 (Macintosh; OS X 10.12.6) AppleWebKit/603.3.8",
         "Connection" : "keep-alive",
         "Content-Type" : "application/x-dmap-tagged",
         # Replace the values of the next three headers with the values you intercepted
+        "User-Agent" : "**REPLACE THIS**",
+        "X-Apple-Store-Front" : "**REPLACE THIS**",
         "X-Dsid" : "**REPLACE THIS**",
+        "Cookie" : "**REPLACE THIS**",
         "X-Guid" : "**REPLACE THIS**",
-        "Cookie" : "**REPLACE THIS**"
+        "Content-Length" : "77"
     }
 
     request = urllib.request.Request("https://ld-8.itunes.apple.com/WebObjects/MZDaap.woa/daap/databases/1/cloud-add", data, headers)
